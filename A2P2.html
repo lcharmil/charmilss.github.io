@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planet Data Table</title>
+    <style>
+        colgroup col {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <!-- Planet Data Table -->
+    <table>
+        <caption>Data about the planets in the Solar System</caption>
+        <colgroup>
+            <col style="border: 1px solid black;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th scope="col">Planet</th>
+                <th scope="col">Diameter</th>
+                <th scope="col">Distance from Sun</th>
+                <th scope="col">Number of Moons</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Row for Terrestrial planets -->
+            <tr>
+                <th scope="rowgroup">Terrestrial planets</th>
+            </tr>
+            <tr>
+                <th scope="row">Mercury</th>
+                <td>4,880 km</td>
+                <td>57.9 million km</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <th scope="row">Venus</th>
+                <td>12,104 km</td>
+                <td>108.2 million km</td>
+                <td>0</td>
+            </tr>
+            <!-- Jovian planets -->
+            <tr>
+                <th scope="rowgroup" colspan="4">Jovian planets</th>
+            </tr>
+            <tr>
+                <th scope="row">Jupiter</th>
+                <td>142,984 km</td>
+                <td>778.5 million km</td>
+                <td>79</td>
+            </tr>
+            <tr>
+                <th scope="row">Saturn</th>
+                <td>120,536 km</td>
+                <td>1.43 billion km</td>
+                <td>82</td>
+            </tr>
+            <!-- Ice giants -->
+            <tr>
+                <th scope="rowgroup" colspan="4">Ice giants</th>
+            </tr>
+            <tr>
+                <th scope="row">Uranus</th>
+                <td>51,118 km</td>
+                <td>2.87 billion km</td>
+                <td>27</td>
+            </tr>
+            <tr>
+                <th scope="row">Neptune</th>
+                <td>49,528 km</td>
+                <td>4.50 billion km</td>
+                <td>14</td>
+            </tr>
+            <!-- Dwarf planets -->
+            <tr>
+                <th scope="row">Dwarf Planets</th>
+                <td colspan="3">Various small celestial bodies</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
