@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fundamental Layout Comprehension</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Header and Navigation */
+        header {
+            background-color: #375e97;
+            color: white;
+            padding: 1em;
+            position: relative; /* Set position to relative */
+        }
+
+        nav {
+            position: sticky; /* Makes the nav sticky */
+            top: 0; /* Locks it to the top of the viewport */
+            background-color: #375e97;
+            padding: 1em 0;
+        }
+
+        nav ul {
+            display: flex; /* Flexbox for navigation */
+            justify-content: space-around; /* Space between links */
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav li {
+            margin: 0 10px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fb6542;
+        }
+
+        /* Main Content */
+        main {
+            display: flex;
+            gap: 20px; /* Space between article and aside */
+            padding: 1em;
+        }
+
+        /* Article and Aside */
+        article, aside {
+            flex: 1; /* Both will take equal space */
+        }
+
+        article {
+            display: flex;
+            flex-direction: column; /* Column layout for article */
+        }
+
+        .float-left {
+            float: left; /* Float images to the left */
+            margin: 0 10px 10px 0; /* Right margin for spacing */
+            max-width: 100%; /* Responsive image */
+            width: 150px; /* Set a fixed width */
+            height: auto; /* Maintain aspect ratio */
+        }
+
+        /* Two-column layout for photographs */
+        .photographs {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Two-column layout */
+            gap: 1px; /* 1px gap between images */
+            margin-top: 20px;
+        }
+
+        .photograph {
+            width: 100%; /* Responsive images */
+            height: auto; /* Maintain aspect ratio */
+            max-width: 150px; /* Set a fixed width for photographs */
+        }
+
+        /* Footer */
+        footer {
+            background-color: #375e97;
+            color: white;
+            text-align: center;
+            padding: 1em;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+    Name: Charmil Laheri
+    File: layout.html
+    Date: 15 October 2024
+    Layout comprehension using CSS with Flexbox and Sticky Navbar.
+    -->
+
+    <header>
+        <h1>My Website</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <article>
+            <h2>Welcome to My Website</h2>
+            <img src="balloon-sq1.jpg" alt="Description of image" class="float-left" />
+            <p>This is the main content area where you can include various articles or information.</p>
+            
+            <p>Additional content here. Images are floated to the left with margins.</p>
+        </article>
+        
+        <aside>
+            <h2>Related Information</h2>
+            <p>This is some related information displayed in the aside section.</p>
+        </aside>
+        
+        <section class="photographs">
+            <h2>Photographs</h2>
+            <img src="balloon-sq2.jpg" alt="Description of image" class="photograph" />
+            <img src="balloon-sq3.jpg" alt="Photograph 1" class="photograph" />
+            <img src="balloon-sq4.jpg" alt="Photograph 2" class="photograph" />
+            <img src="balloon-sq5.jpg" alt="Photograph 3" class="photograph" />
+            <img src="balloon-sq6.jpg" alt="Photograph 4" class="photograph" />
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 My Website</p>
+    </footer>
+</body>
+</html>
