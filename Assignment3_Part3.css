@@ -1,0 +1,23 @@
+@font-face {
+    font-family: 'CustomFont1';
+    src: url('path/to/font1.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'CustomFont2';
+    src: url('path/to/font2.woff2') format('woff2');
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: 'CustomFont1', sans-serif;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
