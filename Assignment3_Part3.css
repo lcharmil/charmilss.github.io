@@ -21,3 +21,55 @@ body {
     color: #333;
 }
 
+header {
+    background: #007BFF;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    font-family: 'CustomFont2', serif;
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+h2 {
+    font-family: 'CustomFont2', serif;
+    font-size: 2rem;
+    margin: 1.5rem 0;
+    text-align: left;
+}
+
+p {
+    margin: 1rem 0;
+    text-align: justify;
+}
+
+a {
+    color: blue;
+    text-decoration: underline;
+}
+
+a:hover {
+    text-decoration: none;
+    color: darkblue;
+}
+
+a:focus {
+    outline: none;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    background: #333;
+    padding: 1rem;
+}
+
+.navbar a {
+    margin: 0 15px;
+    color: white;
+}
+
