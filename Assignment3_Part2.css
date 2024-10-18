@@ -1,0 +1,18 @@
+.box {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    width: 300px;
+    text-align: center;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2),
+                0 0 20px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(to top left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 30%);
+    height: 200px; /* Adjust height as necessary */
+}
+
+h2 {
+    color: #333;
+    font-size: 1.5rem; 
+}
