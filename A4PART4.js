@@ -1,4 +1,4 @@
-// Constants
+// Constants 
 const canvas = document.querySelector('canvas');
 const ctx = canvas.getContext('2d');
 const width = canvas.width = window.innerWidth;
@@ -94,7 +94,12 @@ class EvilCircle extends Shape {
             const distance = Math.sqrt(dx * dx + dy * dy);
 
             if (distance < this.size + balls[i].size) {
+                // Change the color of the ball and EvilCircle upon collision
                 balls[i].color = this.color = `rgb(${random(0, 255)}, ${random(0, 255)}, ${random(0, 255)})`;
+
+                // Optional: You can also move the ball out of the EvilCircle
+                balls[i].x = random(balls[i].size, width - balls[i].size);
+                balls[i].y = random(balls[i].size, height - balls[i].size);
             }
         }
     }
@@ -115,14 +120,14 @@ while (balls.length < 25) {
     balls.push(ball);
 }
 
-// Create an EvilCircle
+// Create an EvilCircle at the center of the canvas
 const evilCircle = new EvilCircle(
-    random(20, width - 20),
-    random(20, height - 20),
+    width / 2, // Center horizontally
+    height / 2, // Center vertically
     random(-7, 7),
     random(-7, 7),
     'white',
-    20
+    20 // Size of the EvilCircle
 );
 
 // Loop function for animation
@@ -130,16 +135,18 @@ function loop() {
     ctx.fillStyle = 'rgba(0, 0, 0, 0.25)';
     ctx.fillRect(0, 0, width, height);
 
+    // Update and draw all balls
     for (let i = 0; i < balls.length; i++) {
         balls[i].draw();
         balls[i].update();
     }
 
-    
+    // Draw EvilCircle, check its bounds, and detect collisions
     evilCircle.draw();
     evilCircle.checkBounds();
     evilCircle.collisionDetect();
 
+    // Request next frame
     requestAnimationFrame(loop);
 }
 
