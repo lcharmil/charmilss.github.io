@@ -4,6 +4,9 @@ const ctx = canvas.getContext('2d');
 const width = canvas.width = window.innerWidth;
 const height = canvas.height = window.innerHeight;
 
+// Ball count display (below canvas)
+const ballCountDisplay = document.getElementById('ballCount');
+
 // Helper function to generate random numbers
 function random(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -97,9 +100,14 @@ class EvilCircle extends Shape {
                 // Change the color of the ball and EvilCircle upon collision
                 balls[i].color = this.color = `rgb(${random(0, 255)}, ${random(0, 255)}, ${random(0, 255)})`;
 
-                // Optional: You can also move the ball out of the EvilCircle
+                // Optional: Move the ball out of the EvilCircle
                 balls[i].x = random(balls[i].size, width - balls[i].size);
                 balls[i].y = random(balls[i].size, height - balls[i].size);
+
+                // Remove the ball from the array and update ball count
+                balls.splice(i, 1);
+                updateBallCount(); // Update the ball count on each removal
+                i--; // Decrement index to check the next ball after removal
             }
         }
     }
@@ -129,6 +137,11 @@ const evilCircle = new EvilCircle(
     'white',
     20 // Size of the EvilCircle
 );
+
+// Function to update the ball count in the DOM
+function updateBallCount() {
+    ballCountDisplay.textContent = balls.length;
+}
 
 // Loop function for animation
 function loop() {
