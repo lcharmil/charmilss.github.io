@@ -135,6 +135,7 @@ function loop() {
         balls[i].update();
     }
 
+    
     evilCircle.draw();
     evilCircle.checkBounds();
     evilCircle.collisionDetect();
