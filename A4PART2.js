@@ -1,5 +1,5 @@
 // Array of image file names
-const imageFiles = ['A4PART2_1.jpg', 'A4PART2_2.jpg', 'A4PART2_3.jpg', 'A4PART2_4.jpg', 'A4PART2_5.jpg'];
+const imageFiles = ['11111.jpg', '22222.jpg', '33333.jpg', '44444.jpg', '55555.jpg'];
 
 // DOM Elements
 const thumbsContainer = document.querySelector('.thumbs');
