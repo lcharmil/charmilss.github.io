@@ -57,3 +57,35 @@ class Ball {
         }
     }
 }
+
+// Create 25 random balls
+const balls = [];
+while (balls.length < 25) {
+    const size = random(10, 20);
+    const ball = new Ball(
+        random(size, width - size),
+        random(size, height - size),
+        random(-7, 7),
+        random(-7, 7),
+        `rgb(${random(0, 255)}, ${random(0, 255)}, ${random(0, 255)})`,
+        size
+    );
+    balls.push(ball);
+}
+
+// Loop to animate the balls
+function loop() {
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.25)';
+    ctx.fillRect(0, 0, width, height);
+
+    for (const ball of balls) {
+        ball.draw();
+        ball.update();
+        ball.collisionDetect();
+    }
+
+    requestAnimationFrame(loop);
+}
+
+// Start the animation loop
+loop();
