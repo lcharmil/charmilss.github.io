@@ -20,4 +20,19 @@ thumbsContainer.addEventListener('click', (event) => {
     }
 });
 
+const toggleButton = document.getElementById('light-dark-toggle');
+
+toggleButton.addEventListener('click', () => {
+    const btnClass = toggleButton.classList.contains('dark');
+    if (btnClass) {
+        toggleButton.classList.remove('dark');
+        toggleButton.classList.add('light');
+        displayedImage.style.filter = 'brightness(1.5)';
+    } else {
+        toggleButton.classList.remove('light');
+        toggleButton.classList.add('dark');
+        displayedImage.style.filter = 'brightness(0.5)';
+    }
+});
+
 });
