@@ -1,4 +1,4 @@
-// Constants 
+// Constants
 const canvas = document.querySelector('canvas');
 const ctx = canvas.getContext('2d');
 const width = canvas.width = window.innerWidth;
@@ -9,7 +9,7 @@ function random(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-// Parent Shape class
+// Parent Shape Class
 class Shape {
     constructor(x, y, velX, velY) {
         this.x = x;
@@ -19,7 +19,7 @@ class Shape {
     }
 }
 
-// Ball class (inherits from Shape)
+// Ball Class (inherits from Shape)
 class Ball extends Shape {
     constructor(x, y, velX, velY, color, size) {
         super(x, y, velX, velY); // Call to Shape constructor
@@ -47,7 +47,10 @@ class Ball extends Shape {
 
         this.x += this.velX;
         this.y += this.velY;
-        // Commit 5: Defined EvilCircle class (inherits from Shape) and added collision detection
+    }
+}
+
+// EvilCircle Class (inherits from Shape)
 class EvilCircle extends Shape {
     constructor(x, y, velX, velY, color, size) {
         super(x, y, velX, velY); // Call to Shape constructor
@@ -97,5 +100,47 @@ class EvilCircle extends Shape {
     }
 }
 
-    }
+// Create random Balls
+const balls = [];
+while (balls.length < 25) {
+    const size = random(10, 20);
+    const ball = new Ball(
+        random(size, width - size),
+        random(size, height - size),
+        random(-7, 7),
+        random(-7, 7),
+        `rgb(${random(0, 255)}, ${random(0, 255)}, ${random(0, 255)})`,
+        size
+    );
+    balls.push(ball);
 }
+
+// Create an EvilCircle
+const evilCircle = new EvilCircle(
+    random(20, width - 20),
+    random(20, height - 20),
+    random(-7, 7),
+    random(-7, 7),
+    'white',
+    20
+);
+
+// Loop function for animation
+function loop() {
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.25)';
+    ctx.fillRect(0, 0, width, height);
+
+    for (let i = 0; i < balls.length; i++) {
+        balls[i].draw();
+        balls[i].update();
+    }
+
+    evilCircle.draw();
+    evilCircle.checkBounds();
+    evilCircle.collisionDetect();
+
+    requestAnimationFrame(loop);
+}
+
+// Start the animation loop
+loop();
