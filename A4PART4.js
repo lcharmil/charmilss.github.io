@@ -117,8 +117,8 @@ while (balls.length < 25) {
 
 // Create an EvilCircle
 const evilCircle = new EvilCircle(
-    random(20, width - 20),
-    random(20, height - 20),
+    random(20,  - 20),
+    random(20,  - 20),
     random(-7, 7),
     random(-7, 7),
     'white',
@@ -135,7 +135,6 @@ function loop() {
         balls[i].update();
     }
 
-    
     evilCircle.draw();
     evilCircle.checkBounds();
     evilCircle.collisionDetect();
