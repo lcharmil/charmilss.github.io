@@ -4,10 +4,12 @@ const insertX = ["Willy the Goblin", "Big Daddy", "Father Christmas"];
 const insertY = ["the soup kitchen", "Disneyland", "the White House"];
 const insertZ = ["spontaneously combusted", "melted into a puddle on the sidewalk", "turned into a slug and crawled away"];
 
-// Helper function to get a random value from an array
+// Helper function
 function randomValueFromArray(array) {
     return array[Math.floor(Math.random() * array.length)];
+}
 
+// Event handler
 document.getElementById('generate').addEventListener('click', result);
 
 function result() {
@@ -22,8 +24,20 @@ function result() {
     newStory = newStory.replaceAll(':inserty:', yItem);
     newStory = newStory.replaceAll(':insertz:', zItem);
 
+    // Handle custom name input
+    const customName = document.getElementById('customname').value;
+    if (customName !== '') {
+        newStory = newStory.replaceAll('Bob', customName);
+    }
+
+    // Handle UK region-specific conversions
+    if (document.getElementById('uk').checked) {
+        const weightInStones = Math.round(300 / 14) + " stone";
+        const tempInCelsius = Math.round((94 - 32) * 5 / 9) + " centigrade";
+        newStory = newStory.replaceAll('300 pounds', weightInStones);
+        newStory = newStory.replaceAll('94 degrees Fahrenheit', tempInCelsius);
+    }
+
     // Display the final story
     document.querySelector('.story').textContent = newStory;
-}
-
 }
