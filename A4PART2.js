@@ -12,4 +12,12 @@ imageFiles.forEach((file, index) => {
     thumb.alt = `Thumbnail ${index + 1}`;
     thumb.classList.add('thumbnail');
     thumbsContainer.appendChild(thumb);
+
+    // Add click event listener to thumbnails
+thumbsContainer.addEventListener('click', (event) => {
+    if (event.target.tagName === 'IMG') {
+        displayedImage.src = event.target.src;
+    }
+});
+
 });
