@@ -2,18 +2,18 @@
 html, body {
   margin: 0;
   padding: 0;
+  font-family: 'Open Sans Condensed', sans-serif;
 }
 
 html {
   font-size: 10px;
-  background-color: #dde;
+  background-color: #e6e6fa; /* Light lavender background */
 }
 
 body {
   width: 80%;
   min-width: 1024px;
   margin: 0 auto;
-  font-family: 'Open Sans Condensed', sans-serif;
 }
 
 /* Typography */
@@ -30,7 +30,7 @@ p, input, li, table, label, th, td {
 
 /* Header */
 header {
-  background-color: green;
+  background-color: #4b0082; /* Indigo background for header */
   text-align: center;
   padding: 20px;
 }
@@ -43,7 +43,7 @@ header h1 {
 
 /* Navigation */
 nav {
-  background-color: #ff80ff;
+  background-color: #9370db; /* Medium purple background */
   display: flex;
   justify-content: space-between;
   padding: 10px;
@@ -63,7 +63,7 @@ nav li {
 nav a {
   text-decoration: none;
   font-size: 2rem;
-  color: black;
+  color: white;
 }
 
 nav form {
@@ -78,6 +78,8 @@ nav form input {
 /* Main Layout */
 main {
   display: flex;
+  flex-direction: column;
+  margin-top: 20px;
 }
 
 article {
@@ -85,9 +87,20 @@ article {
   margin-right: 20px;
 }
 
-footer {
-  text-align: center;
-  padding: 10px;
+/* Image Styling */
+.image-container {
+  display: flex;
+  justify-content: space-around; /* Space between the images */
+  align-items: center; /* Align images vertically */
+  margin: 20px 0;
+}
+
+.bear-img {
+  width: 300px; /* Fixed width */
+  height: 300px; /* Fixed height */
+  object-fit: cover; /* Ensures images fill the size without distortion */
+  border: 2px solid #000; /* Optional: Add a border for clarity */
+  border-radius: 5px; /* Optional: Rounded edges */
 }
 
 /* Table Styling */
@@ -95,6 +108,7 @@ table {
   width: 100%;
   background-color: #dde;
   border-collapse: collapse;
+  margin-top: 20px;
 }
 
 th, td {
@@ -107,16 +121,59 @@ caption {
   margin-bottom: 10px;
 }
 
-/* Comments */
-.comment-form {
-  margin: 20px 0;
+tbody tr:nth-child(odd) {
+  background-color: #f5f5f5;
 }
 
-.show-hide {
-  display: inline-block;
-  padding: 10px 20px;
+/* Form Styling */
+.comment-form {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f0f0f0; /* Light gray background for form */
+  border-radius: 5px;
+}
+
+.comment-form label {
+  display: block;
+  font-size: 1.4rem;
+  margin: 5px 0;
+}
+
+.comment-form input[type="text"] {
+  width: 100%;
+  padding: 5px;
+  font-size: 1.4rem;
   margin-bottom: 10px;
-  background-color: #333;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.comment-form input[type="submit"] {
+  background-color: #4b0082; /* Indigo button */
   color: white;
+  font-size: 1.6rem;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 3px;
   cursor: pointer;
+}
+
+.comment-form input[type="submit"]:hover {
+  background-color: #9370db; /* Lighter hover effect */
+}
+
+/* Audio Styling */
+audio {
+  display: block;
+  margin: 20px auto;
+  width: 300px; /* Adjust width for consistency */
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #4b0082; /* Indigo background */
+  color: white;
 }
